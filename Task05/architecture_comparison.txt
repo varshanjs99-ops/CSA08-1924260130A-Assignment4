@@ -1,0 +1,19 @@
+(a) One script: all concerns live in one file. Easy to start, but difficult to reuse and test separately.
+A new report usually requires editing the same file; a change risks affecting unrelated logic.
+(b) One module + main script: processing functions are moved into attendance.py; main.py imports the module.
+The extra report is added in the module and/or caller. Reuse improves, but the module may become large.
+(c) Three modules in one folder: reader.py, stats.py and report.py separate responsibilities. The new report
+is added mainly to stats.py/report.py and one call is added in main.py; testing individual parts is simpler.
+(d) Package attendance/: __init__.py exposes the stable public API; reader.py, stats.py and report.py each have
+one responsibility. A new report can be placed in stats.py or a new module and exported in __init__.py.
+Imports: `import attendance.stats` then `attendance.stats.percentages(...)`;
+`from attendance import stats` then `stats.percentages(...)`;
+`from attendance.stats import percentages` then `percentages(...)`.
+The package approach provides clean namespace boundaries and reusable components. Imports are performed once
+per process and modules are cached in sys.modules; there is a small one-time import and memory cost.
+A single script avoids import overhead but has high change coupling. Names should be specific (e.g. percentage_report)
+to avoid local module names shadowing standard-library modules.
+The requested second report is absent-three-days. In this implementation, the one-script version changes one file;
+module version changes one module plus its caller if the call is not already generic; three-module version changes
+stats.py and report.py (or a new report module); package version changes stats.py and report.py, with __init__.py
+changed only if a new public function/module is exported. Counts are design-dependent and are stated explicitly here.
