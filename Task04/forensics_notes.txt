@@ -1,0 +1,17 @@
+Defects:
+1. Opening the master log in write mode ('w') truncates all earlier days on every call.
+2. Writing each book without a newline joins adjacent titles into one unreadable record.
+3. The returned-book file is read with read().split('\n'), loading the whole file and retaining a final empty string.
+4. The source file is not opened with a context manager, so it may remain open if read() fails.
+5. The log is manually closed; an exception in the loop can bypass close().
+6. Only FileNotFoundError is caught; permission/encoding/write failures are not recorded.
+7. The error handler only prints 'missing' and loses the filename and cause.
+
+Repair: use append mode ('a'), add a newline per book, use with for every file,
+iterate line-by-line or readlines if the file is small, and append structured errors to an error log.
+The algorithmic time is O(B) in number of returned-book lines and O(L) space if the input is read
+into memory; streaming one line at a time uses O(1) additional working space. with-statements do not
+change asymptotic time/space, but guarantee closure. The buggy function can leave one or more files
+open if an exception occurs; with blocks close each file on exit.
+Prevention rules: always use with open(...); select 'w' only for a new/replacement report and 'a'
+for cumulative logs; include explicit newline delimiters; catch and log specific exceptions.
