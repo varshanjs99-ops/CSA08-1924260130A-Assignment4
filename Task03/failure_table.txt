@@ -1,0 +1,13 @@
+Failure -> likely built-in exception / handling:
+Missing folder -> FileNotFoundError (or NotADirectoryError); report the path and stop/skip according to policy.
+Missing file -> FileNotFoundError; record file-level error and continue with other files.
+Permission denied -> PermissionError; record it and continue if safe.
+Wrong encoding / invalid byte sequence -> UnicodeDecodeError; log encoding issue and do not silently replace bytes.
+Bad field count/status -> custom InvalidRecord; include line number and reason, continue with next row.
+Invalid conversion -> ValueError (if numeric fields are added); catch at the specific conversion boundary.
+Invalid list index -> IndexError; generally indicates a programming defect, not malformed attendance data.
+
+try wraps the risky operation. except handles specific failures. else runs only if no exception occurred.
+finally runs whether success or failure and is appropriate for cleanup. `raise ... from exc`
+preserves the original cause when translating a low-level error into a domain-specific exception.
+A blanket `except Exception: pass` hides NameError/TypeError and other bugs, making diagnosis impossible.
