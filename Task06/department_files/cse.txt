@@ -1,0 +1,3 @@
+192426001|Arun Kumar|CSE|arun@example.com|Coding;Robotics
+192426002|Meena S|CSE|meena@example.com|Music;Dance
+192426003|Ravi K|CSE|ravi(at)example.com|Coding

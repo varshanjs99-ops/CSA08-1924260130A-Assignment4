@@ -1,0 +1,11 @@
+register,name,department,email,events
+192426001,Arun Kumar,CSE,arun@example.com,Coding;Music;Robotics
+192426002,Meena S,CSE,meena@example.com,Dance;Music
+192426004,Divya R,ECE,divya@example.com,Photography;Robotics
+192426005,Karthik,ECE,karthik@example.com,Dance
+192426006,Nila,EEE,nila@example.com,Music;Photography
+192426007,Sanjay,EEE,sanjay@example.com,Coding
+192426008,Priya,MECH,priya@example.com,Dance;Robotics
+192426009,Vijay,MECH,vijay@example.com,Photography
+192426010,Asha,CIVIL,asha@example.com,Music
+192426011,Hari,CIVIL,hari@example.com,Coding;Dance

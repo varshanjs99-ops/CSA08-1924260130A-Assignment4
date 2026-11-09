@@ -1,0 +1,3 @@
+192426004|Divya R|ECE|divya@example.com|Robotics;Photography
+192426001|Arun Kumar|ECE|arun@example.com|Music
+192426005|Karthik|ECE|karthik@example.com|Dance

@@ -1,0 +1,2 @@
+192426010|Asha|CIVIL|asha@example.com|Music
+192426011|Hari|CIVIL|hari@example.com|Coding;Dance

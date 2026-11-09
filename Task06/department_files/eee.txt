@@ -1,0 +1,3 @@
+192426006|Nila|EEE|nila@example.com|Music;Photography
+this is a damaged registration row
+192426007|Sanjay|EEE|sanjay@example.com|Coding
