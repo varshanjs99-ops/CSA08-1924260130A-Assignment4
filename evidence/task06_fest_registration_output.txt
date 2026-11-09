@@ -1,0 +1,9 @@
+COLLEGE FEST REGISTRATION DESK
+Unique students: 10
+Events: ['Coding', 'Dance', 'Music', 'Photography', 'Robotics']
+Event participant counts: {'Coding': 3, 'Dance': 4, 'Music': 4, 'Photography': 3, 'Robotics': 3}
+Errors / audit records:
+('cse.txt', 3, "invalid email address 'ravi(at)example.com'", '192426003|Ravi K|CSE|ravi(at)example.com|Coding')
+('ece.txt', 2, 'duplicate registration merged by register number', '192426001|Arun Kumar|ECE|arun@example.com|Music')
+('eee.txt', 2, 'expected 5 pipe-separated fields, found 1', 'this is a damaged registration row')
+Output files are in: /mnt/data/SIMATS_Assignment4_Python/Task06/outputs

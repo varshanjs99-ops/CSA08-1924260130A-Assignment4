@@ -1,0 +1,3 @@
+Valid and invalid sample: (1, 1, [(3, 'expected 3 fields, found 2'), (4, "invalid status 'L'")])
+Missing-file handling: (0, 0, [(0, 'cannot open attendance file: /tmp/tmpbakxh8ue.csv.missing (original cause: FileNotFoundError)')])
+Program continued, but the NameError was hidden by except Exception: pass

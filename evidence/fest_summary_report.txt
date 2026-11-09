@@ -1,0 +1,8 @@
+COLLEGE FEST REGISTRATION SUMMARY
+Unique students: 10
+Unique events: 5
+Coding: 3 participant(s)
+Dance: 4 participant(s)
+Music: 4 participant(s)
+Photography: 3 participant(s)
+Robotics: 3 participant(s)

@@ -1,0 +1,3 @@
+Missing CIVIL file detected: True
+Other departments still processed: True
+Missing-file error: [('civil.txt', 0, 'department file missing; skipped', '')]

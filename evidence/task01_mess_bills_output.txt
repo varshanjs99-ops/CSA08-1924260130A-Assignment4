@@ -1,0 +1,8 @@
+TASK 1 - MESS BILL PROCESSOR
+Accepted records: 3
+Rejected records:
+  line 4: '192426003,Ravi,invalid' -> amount must be a valid decimal such as 1250.50
+  line 5: '192426004,Kavya' -> expected 3 fields, found 2
+Total mess bill: INR 3681.25
+Report: mess_report.txt
+50,000-line reading test: iteration=0.011327s, peak=21,961 B; readlines=0.036548s, peak=4,096,719 B; file-size=1,588,890 bytes

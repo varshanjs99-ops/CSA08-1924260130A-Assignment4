@@ -1,0 +1,11 @@
+Buggy log after three days: 'Book DBook E'
+Fixed log after three days:
+Book A
+Book B
+Book C
+Book D
+Book E
+Error log exists: False
+Missing day handled: False
+Final error log: /tmp/tmpk1mxh92s/missing_day.txt: [Errno 2] No such file or directory: '/tmp/tmpk1mxh92s/missing_day.txt'
+

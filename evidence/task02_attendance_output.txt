@@ -1,0 +1,8 @@
+TASK 2 - MONTHLY ATTENDANCE
+Attendance percentages:
+192426001: P=3, A=1, 75.00%
+192426002: P=2, A=2, 50.00%
+192426003: P=2, A=1, 66.67%
+Below 75%: ['192426002', '192426003']
+Damaged lines: [('2026-10-03.txt', 3, "invalid status 'L'; expected P or A", '192426003,2026-10-03,L'), ('2026-10-03.txt', 4, 'expected 3 fields, found 1', 'bad damaged line')]
+Output files: attendance_report.txt, damaged_lines.csv
