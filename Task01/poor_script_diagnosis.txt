@@ -1,0 +1,16 @@
+Task 1.1 - Diagnosis of the supplied poor script
+
+1. Hard-coded absolute path: the program fails on another computer or when the file is moved.
+2. File is not closed: descriptors remain occupied and buffered data may not be flushed.
+3. f.read() loads the entire file: memory use grows with the input file.
+4. Bare except/pass hides every error, including programming mistakes; no rejected-line evidence remains.
+5. int(parts[2]) rejects decimal amounts such as 1250.50 and may truncate incorrectly if changed carelessly.
+6. Repeated report = report + ... repeatedly creates strings and copies accumulated text.
+7. A final empty line is processed as if it were a record and causes an index error.
+8. Rejected records are not logged, so the office cannot identify or correct missing bills.
+9. There is no validation for field count or empty register/name fields.
+10. No encoding is stated, so non-ASCII names may decode incorrectly on some systems.
+
+The repaired implementation takes the filename as a parameter, uses with, iterates line by line,
+uses Decimal for currency, catches only expected parse/value exceptions, skips blank lines,
+stores rejected line number/raw content/reason, and writes the report once.
