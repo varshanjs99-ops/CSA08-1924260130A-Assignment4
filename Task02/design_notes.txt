@@ -1,0 +1,26 @@
+Input: one daily UTF-8 text file per date; one record per line:
+register_number,date,status
+status is P (present) or A (absent). Blank lines are ignored; damaged rows are logged.
+Data structure: dictionary register -> [present_count, absent_count], using O(s) space.
+Outputs: attendance_percentage.csv (all students), below_75.csv (students under threshold),
+and damaged_lines.csv (filename, line number, reason and raw text).
+
+File operations: enumerate sorted Path.glob('*.txt'); open text files with mode r, encoding utf-8-sig;
+iterate line-by-line; write CSV outputs with mode w and newline=''. with statements close each file.
+Pseudocode:
+FOR each daily file in sorted monthly files:
+  OPEN file for reading
+  FOR each line and line_number:
+    SKIP blank lines
+    TRY split into register,date,status and validate exactly three fields and P/A status
+    ON validation error: append file/line/reason/raw to error list; CONTINUE
+    UPDATE present or absent counter for register
+FOR each register: calculate 100 * present / (present + absent)
+WRITE complete percentage report, below-75 report and damaged-line log.
+Trace for damaged line 'bad damaged line': split gives one field, expected three; write error tuple;
+do not change any student's P/A totals; continue to next input line.
+
+If there are s students, f files and l lines/file, reading each file once costs O(f*l) time
+(plus parsing each line). Re-reading every daily file for each student costs O(s*f*l).
+The dictionary design uses O(s) aggregation space plus O(e) error records; streaming avoids loading
+all daily files into memory.
